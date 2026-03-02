@@ -1,0 +1,246 @@
+/* entire background */
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #d282b4;
+
+  background-image: url('src/graphic/duckie-background.jpg'); 
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+/* app box */
+.todo-container {
+  padding: 40px;
+  font-family: system-ui, -apple-system, sans-serif;
+  text-align: center;
+  width: 90%;             
+  max-width: 500px;        
+  
+  /* semi-transparent background*/
+  background-color: rgba(0, 0, 0, 0.85); 
+  
+  color: #efc2ec;          
+  border: 1px solid rgba(229, 111, 184, 0.3); 
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+}
+
+/* input form */
+.todo-form {
+  display: flex;
+  gap: 8px;
+}
+
+.todo-input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: 2px solid #e56fb8;
+  font-size: 1rem;
+
+  background-color: #ffffff;
+  color: #000000;
+
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.todo-input:focus {
+  border-color: #efc2ec;
+  box-shadow: 0 0 8px rgba(229, 111, 184, 0.4);
+}
+
+.todo-input:placeholder {
+  color: #666666;
+  opacity: 1;
+}
+
+.add-button {
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 8px;
+  border: 1px solid #e56fb8;
+  background: #e56fb8;
+  color:#000;
+  transition: background 0.2s;
+}
+
+.add-button:hover {
+  background: #e9abdf;
+}
+
+/* progress & stats */
+.stats-text {
+  margin-top: 15px;
+  font-size: 0.9rem;
+}
+
+.progress-track {
+  height: 10px;
+  background: #eee;
+  border-radius: 6px;
+  margin-top: 8px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  transition: width 0.4s ease-in-out, background 0.3s;
+}
+
+/* filters */
+.filter-bar {
+  margin-top: 16px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-start; 
+}
+
+.filter-btn {
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.filter-btn.active {
+  background: #e56fb8;
+  color: #000;
+  box-shadow: 0 0 10px rgba(229, 111, 184, 0.3);
+}
+
+.filter-btn.inactive {
+  background: #333;
+  color: #efc2ec;
+}
+
+.filter-btn.inactive:hover {
+  background: #444;
+}
+
+/* rightmost clear button*/
+.clear-completed-btn {
+  margin-left: auto;
+  background: rgba(255, 77, 77, 0.1);
+  color: #ff4d4d;
+  border: 1px solid rgba(255, 77, 77, 0.3);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.clear-completed-btn:hover {
+  background: #ff4d4d;
+  color: #fff;
+  border-color: #ff4d4d;
+  box-shadow: 0 0 12px rgba(255, 77, 77, 0.4);
+  transform: translateY(-1px);
+}
+
+/* todo list */
+.todo-list {
+  margin-top: 20px;
+  padding-left: 0;
+}
+
+.todo-item {
+  list-style: none;
+  padding: 12px;
+  border: 1px solid #5def73;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: background 0.2s;
+}
+
+.todo-item.completed {
+  background: #befac7;
+  border-color: #39ff14;
+}
+
+.todo-checkbox {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: #39ff14;
+}
+
+.todo-text {
+  flex: 1;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.todo-text.strikethrough {
+  text-decoration: line-through;
+  color: #000;
+  opacity: 0.7;
+}
+
+.delete-btn {
+  background: transparent;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  color: #ccc;
+  transition: color 0.2s;
+}
+
+.delete-btn:hover {
+  color: #ff0000;
+}
+
+/* undo toast */
+.undo-toast {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 300px;
+  padding: 12px 20px;
+  background: #000000;
+  color: #ffffff;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+.undo-btn {
+  background: none;
+  border: none;
+  color: #5def73;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 0.85rem;
+  padding: 4px 8px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.empty-msg {
+  margin-top: 30px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  color: #efc2ec;
+  opacity: 0.8;
+  border: 1px dashed rgba(239, 194, 236, 0.3);
+}
