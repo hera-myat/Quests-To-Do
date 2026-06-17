@@ -2,4 +2,4 @@
 
 🪿 A mini fun to-do-list web application developed in iOS/macOS format using React 🪿
 
-![Screenshot](Quests-To-Do/assets/screenshot-2026-06-17-164732.png)
+![Screenshot](assets/Screenshot%202026-06-17%20at%2016.47.32.png)
