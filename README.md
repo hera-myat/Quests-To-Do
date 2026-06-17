@@ -1,4 +1,4 @@
-# 🪿 Quests-To-Do 🪿
+# Quests-To-Do
 
-A mini fun to-do-list web application developed in iOS/macOS format using React.
+🪿 A mini fun to-do-list web application developed in iOS/macOS format using React. 🪿
 
